@@ -137,6 +137,20 @@ namespace tp_01
 			Console.WriteLine(redBinaria.retardoReenvio());
 
 
+			Console.WriteLine("");
+			Console.WriteLine("");
+			Console.WriteLine("");
+			
+			Console.WriteLine("***Profundidad De Arbol Binario****");
+			ProfundidadDeArbolBinario pab = new ProfundidadDeArbolBinario( arbol1 );
+			
+			Console.WriteLine("");
+			
+			Console.WriteLine("***sumaElementosProfundidad****");
+			
+			Console.WriteLine( pab.sumaElementosProfundidad( 2 ) );
+			
+			
 			// TODO: Implement Functionality Here
 			
 			Console.Write("Press any key to continue . . . ");
