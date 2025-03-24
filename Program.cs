@@ -143,6 +143,17 @@ namespace tp_01
 			Console.WriteLine( pab.sumaElementosProfundidad( 2 ) );
 			
 			
+			
+			Console.WriteLine("");
+			Console.WriteLine("");
+			Console.WriteLine("");
+			Console.WriteLine("***Nuevo Arbol****");
+			ArbolBinario<int> n = pab.nuevo( arbol1 );
+			
+			n.recorridoPorNiveles();
+
+
+
 			// TODO: Implement Functionality Here
 			
 			Console.Write("Press any key to continue . . . ");
