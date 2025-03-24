@@ -24,6 +24,13 @@ namespace tp_01
 			ArbolBinario<int> arbol7 = new ArbolBinario<int>(7);
 			ArbolBinario<int> arbol8 = new ArbolBinario<int>(8);
 			ArbolBinario<int> arbol9 = new ArbolBinario<int>(9);
+			ArbolBinario<int> arbol10 = new ArbolBinario<int>(10);
+			ArbolBinario<int> arbol11 = new ArbolBinario<int>(11);
+			ArbolBinario<int> arbol12 = new ArbolBinario<int>(12);
+			ArbolBinario<int> arbol13 = new ArbolBinario<int>(13);
+			ArbolBinario<int> arbol14 = new ArbolBinario<int>(14);
+			ArbolBinario<int> arbol15 = new ArbolBinario<int>(15);
+			
 			
 
 			arbol1.agregarHijoIzquierdo(arbol2);
@@ -34,6 +41,13 @@ namespace tp_01
 			arbol3.agregarHijoDerecho(arbol7);
 			arbol4.agregarHijoIzquierdo(arbol8);
 			arbol4.agregarHijoDerecho(arbol9);
+			arbol5.agregarHijoIzquierdo(arbol10);
+			arbol5.agregarHijoDerecho(arbol11);
+			arbol6.agregarHijoIzquierdo(arbol12);
+			arbol6.agregarHijoDerecho(arbol13);
+			arbol7.agregarHijoIzquierdo(arbol14);
+			arbol7.agregarHijoDerecho(arbol15);
+			
 			
 
 			Console.WriteLine("***Inorden****");
@@ -77,6 +91,52 @@ namespace tp_01
 			Console.WriteLine("***Entre Niveles****");						
 			arbol1.recorridoEntreNiveles( 4, 4 );
 			
+
+			Console.WriteLine("");
+			Console.WriteLine("");
+			Console.WriteLine("");
+			
+			Console.WriteLine("***Profundidad arbol1****");
+			Console.WriteLine( arbol1.profundidad() );
+			Console.WriteLine("***Profundidad arbol3****");
+			Console.WriteLine( arbol3.profundidad() );
+			Console.WriteLine("***Profundidad arbol5****");
+			Console.WriteLine( arbol5.profundidad() );			
+			Console.WriteLine("***Profundidad arbol9****");
+			Console.WriteLine( arbol9.profundidad() );
+			
+			
+			Console.WriteLine("");
+			Console.WriteLine("");
+			Console.WriteLine("");
+
+			Console.WriteLine("***Altura Nodo: 1****");			
+			Console.WriteLine( arbol1.altura( arbol1 ) );
+			
+			Console.WriteLine("***Altura Nodo: 9****");			
+			Console.WriteLine( arbol1.altura( arbol9 ) );
+			
+			Console.WriteLine("***Altura Nodo: 5****");			
+			Console.WriteLine( arbol1.altura( arbol5 ) );
+			
+			Console.WriteLine("***Altura Nodo: 3****");			
+			Console.WriteLine( arbol1.altura( arbol3 ) );
+			
+			
+			
+			Console.WriteLine("");
+			Console.WriteLine("");
+			Console.WriteLine("");
+			
+			Console.WriteLine("***Red Binaria****");			
+
+			RedBinariaLlena redBinaria = new RedBinariaLlena( arbol1 );
+			
+			Console.WriteLine("***Maximo retardo****");
+			
+			Console.WriteLine(redBinaria.retardoReenvio());
+
+
 			// TODO: Implement Functionality Here
 			
 			Console.Write("Press any key to continue . . . ");

@@ -150,20 +150,19 @@ namespace tp_01
 				
 				ArbolBinario<T> aux = cola.desencolar();
 				int nivel = niveles.desencolar();
-			
+				
 				if( nivel >= n && nivel <= m ){
 					Console.Write(nivel);
 					Console.Write( " ===> ");				
 					Console.WriteLine( aux.getDatoRaiz());					
 				}
-
 				
-				if( aux.getHijoIzquierdo() != null ){
+				if( aux.getHijoIzquierdo() != null && nivel < m){
 					cola.encolar( aux.getHijoIzquierdo() );
 					niveles.encolar( nivel + 1);
 				}
 				
-				if( aux.getHijoDerecho() != null ){
+				if( aux.getHijoDerecho() != null && nivel < m ){
 					cola.encolar( aux.getHijoDerecho() );
 					niveles.encolar( nivel + 1);
 				}
@@ -171,6 +170,94 @@ namespace tp_01
 			}
 			
 		}
+		
+		public int profundidad(){
+			
+			if( this.esHoja() ){
+				return 0;
+			}
+			
+			Cola<ArbolBinario<T>> cola = new Cola<ArbolBinario<T>>();
+			Cola<int> niveles = new Cola<int>();
+			
+			int profundidad = 0;
+			
+			cola.encolar( this );
+			niveles.encolar( profundidad );
+			
+			while( !cola.esVacia() ){
+				
+				ArbolBinario<T> aux = cola.desencolar();
+				int nivel = niveles.desencolar();				
+				if( nivel > profundidad ){
+					profundidad  = nivel;
+				}
+				
+				if( aux.getHijoIzquierdo() != null ){
+					cola.encolar( aux.getHijoIzquierdo() );
+					niveles.encolar( nivel + 1);
+				}
+				
+				if( aux.getHijoDerecho() != null){
+					cola.encolar( aux.getHijoDerecho() );
+					niveles.encolar( nivel + 1);
+				}
+
+			}
+			
+			return profundidad;
+			
+		}
+				
+		public int altura( ArbolBinario<T> arbol ){
+			
+			if( this.getDatoRaiz().Equals( arbol.getDatoRaiz() )){
+			   	return 0;
+			}
+			
+			int profundidad = 0;			
+			int altura = 0;
+			
+			Cola<ArbolBinario<T>> cola = new Cola<ArbolBinario<T>>();
+			Cola<int> niveles = new Cola<int>();
+			
+	
+			cola.encolar( this );
+			niveles.encolar( profundidad );
+			
+			while( (!cola.esVacia() ) || altura == 0){
+				
+				ArbolBinario<T> aux = cola.desencolar();
+				int nivel = niveles.desencolar();				
+				
+				if( nivel > profundidad ){
+					profundidad  = nivel;
+				}
+				
+			
+				if( aux.getDatoRaiz().Equals( arbol.getDatoRaiz() ) ){	
+					altura = profundidad;
+				}
+				
+				
+				if( aux.getHijoIzquierdo() != null ){
+					cola.encolar( aux.getHijoIzquierdo() );
+					niveles.encolar( nivel + 1);
+				}
+				
+				
+				if( aux.getHijoDerecho() != null){
+					cola.encolar( aux.getHijoDerecho() );
+					niveles.encolar( nivel + 1);
+				}
+
+			}
+			
+			return altura;
+			
+		}
+		
+		
 	
 	}
 }
