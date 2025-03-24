@@ -1,12 +1,4 @@
-﻿/*
- * Created by SharpDevelop.
- * User: PC-Developer
- * Date: 23/3/2025
- * Time: 00:24
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-using System;
+﻿using System;
 
 namespace tp_01
 {
